@@ -2,7 +2,7 @@
 layout:     post
 title:      "行为经济学"
 subtitle:   " \"Hello World, Hello Blog\""
-date:       1992-01-29 12:00:00
+date:       2015-11-12 21:10:13
 author:     "Hux"
 header-img: "img/be.jpg"
 tags:

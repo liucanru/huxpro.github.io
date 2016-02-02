@@ -2,7 +2,7 @@
 layout:     post
 title:      "博客·在路上"
 subtitle:   " \"Hello World, Hello Blog\""
-date:       1992-01-29 12:00:00
+date:       2015-10-4 22:10:17
 author:     "Hux"
 header-img: "img/post-bg-2015.jpg"
 tags:
