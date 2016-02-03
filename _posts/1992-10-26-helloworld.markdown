@@ -1,81 +1,85 @@
 ---
 layout:     post
 title:      "博客·在路上"
-subtitle:   " \"Hello World, Hello Blog\""
+subtitle:   " \"Hello World. Blog on the road.\""
 date:       2015-10-4 22:10:17
-author:     "Hux"
+author:     "Lcr"
 header-img: "img/post-bg-2015.jpg"
 tags:
     - 生活
 ---
 
-> “Yeah It's on. ”
+> “Not only on the road but also on the path.”  -- Jack Kerouac
 
 
 ## 前言
 
-Liucanru 的 Blog 就这么开通了。
+为什么要写博客？
 
-[跳过废话，直接看技术实现 ](#build)
+*记录
+听到的会有印象，看到的会忆起，而只有写下来才能真正记得，并能时常回顾。于我而言，习得的知识，实践的经验，思考的感悟，自我的认识，这些成长收获的点滴，都只是脑海里的过客，如果不搭一个舒适安稳的窝加以挽留，他们片刻之后便会离去，只能留下丁点的痕迹，其余的便都流失消散了。
 
+升华
+生活在一个信息爆炸的时代，的不断输出给我带来恐惧
 
+分享
 
-2016 年，Hux 总算有个地方可以好好写点东西了。
-
-
-作为一个程序员， Blog 这种轮子要是挂在大众博客程序上就太没意思了。一是觉得大部分 Blog 服务都太丑，二是觉得不能随便定制不好玩。之前因为太懒没有折腾，结果就一直连个写 Blog 的地儿都没有。
-
-在玩了一段时间知乎之后，答题的快感又激起了我开博客的冲动。之前的[个人网站](http://huangxuan.me/portfolio)是作品集形式的（现在集成进来了），并不适合用来写博文，一不做二不休，花一天搞一个吧！
-
-
-<p id = "build"></p>
----
+有了想法，便一直在找一个文字的居所。
 
 ## 正文
 
-接下来说说搭建这个博客的技术细节。  
+首先想到在新浪，网易等网站开通个人博客，好处是简单方便，但是觉得这些提供个人博客服务的网站UI都太丑，而且还常常有大量的广告和无关链接等干扰信息，非常影响读者的阅读体验。于是萌生了搭建一个个人博客网站的想法。
 
-正好之前就有关注过 [GitHub Pages](https://pages.github.com/) + [Jekyll](http://jekyllrb.com/) 快速 Building Blog 的技术方案，非常轻松时尚。
+于是开始搜索搭建个人网站的方法。找了一些网上的教程，作为一个技术小白，看完以后还是感觉有些云里雾里，让人无从下手。后来终于找到一个足够轻松优雅的解决方案：[GitHub Pages](https://pages.github.com/) + [Jekyll](http://jekyllrb.com/)快速搭建个人博客网站，具备了满足我所需要的一切优点：
 
-其优点非常明显：
+* 不需要web的相关知识，Markdown轻松优雅
+* 不需要自已申请域名以及服务器资源，GiHub Pages 提供了所需的一切
+* 搭建简单，没有复杂的配置，只需专心于文字创作
 
-* **Markdown** 带来的优雅写作体验
-* 非常熟悉的 Git workflow ，**Git Commit 即 Blog Post**
-* 利用 GitHub Pages 的域名和免费无限空间，不用自己折腾主机
-	* 如果需要自定义域名，也只需要简单改改 DNS 加个 CNAME 就好了 
-* Jekyll 的自定制非常容易，基本就是个模版引擎
-
-
-本来觉得最大的缺点可能是 GitHub 在国内访问起来太慢，所以第二天一起床就到 GitCafe(Chinese GitHub Copy) 迁移了一个[镜像](http://huxpro.gitcafe.io)出来，结果还是巨慢。
-
-哥哥可是个前端好嘛！ 果断开 Chrome DevTool 查了下网络请求，原来是 **pending 在了 Google Fonts** 上，页面渲染一直被阻塞到请求超时为止，难怪这么慢。  
-忍痛割爱，只好把 Web Fonts 去了（反正超时看到的也只能是 fallback ），果然一下就正常了，而且 GitHub 和 GitCafe 对比并没有感受到明显的速度差异，虽然 github 的 ping 值明显要高一些，达到了 300ms，于是用 DNSPOD 优化了一下速度。
-
-
+<p id = "build"></p>
 
 ---
 
-配置的过程中也没遇到什么坑，基本就是 Git 的流程，相当顺手
+###下面详细说一下整个博客网站的搭建过程。
 
-大的 Jekyll 主题上直接 fork 了 Clean Blog（这个主题也相当有名，就不多赘述了。唯一的缺点大概就是没有标签支持，于是我给它补上了。）
+背景介绍
 
-本地调试环境需要 `gem install jekyll`，结果 rubygem 的源居然被墙了……后来手动改成了我大淘宝的镜像源才成功
+首先介绍一下GitHub是什么
 
-Theme 的 CSS 是基于 Bootstrap 定制的，看得不爽的地方直接在 Less 里改就好了（平时更习惯 SCSS 些），**不过其实我一直觉得 Bootstrap 在移动端的体验做得相当一般，比我在淘宝参与的团队 CSS 框架差多了……**所以为了体验，也补了不少 CSS 进去
+> GitHub is a web-based Git repository hosting service. It offers all of the distributed revision control and source code management (SCM) functionality of Git as well as adding its own features.
+[GitHub-wiki](https://en.wikipedia.org/wiki/GitHub)
 
-最后就进入了耗时反而最长的**做图、写字**阶段，也算是进入了**写博客**的正轨，因为是类似 Hack Day 的方式去搭这个站的，所以折腾折腾着大半夜就过去了。
+[Git](https://en.wikipedia.org/wiki/Git)是一个分布式的版本控制系统，版本控制是一个软件工程中的概念。一个项目如果由多人合作开发，那么就需要有一套程序来协调各个人的工作。版本控制意味着记录项目的每一次更新变动的详情，同步最新项目版本，避免不同人对同一文件修改的冲突，从而实现多人高效协作开发。
 
-第二天考虑中文字体的渲染，fork 了 [Type is Beautiful](http://www.typeisbeautiful.com/) 的 `font` CSS，调整了字号，适配了 Win 的渣渲染，中英文混排效果好多了。
+就好像一篇文章一个人写的话从头写到尾就可以了，但多人一起写的话，每个人就必须知道当前文章被其他人编辑成什么样了，每个人都从最新的版本往下写。如果一篇文章分多个段落(模块)的话，还要避免多个人同时编辑同一个段落(模块)，以避免冲突。
 
+了解了Git以后，GitHub就是在Git的基础上提供了Web界面和具有图形化界面的桌面软件，方便进行更新项目最新版本，提交更新，处理冲突，撤销更改返回到历史版本等操作，此外GitHub网站还提供项目托管展示等其他相关服务。
+
+（如果看了GitHub的介绍感觉比较深涩难懂，那就忽略好了，反正跟后面的博客网站的搭建没有多大关系，只需要知道伟大的GitHub网站给我们提供了强大的[GitHub Pages](https://pages.github.com/) + [Jekyll](http://jekyllrb.com/)就好了。）
+
+介绍完GitHub，我们再来看看GitHub Pages的介绍
+
+> [GitHub Pages](https://github.com/blog/272-github-pages) allow you to publish web content to a github.com subdomain named after your username. With Pages, publishing web content becomes as easy as pushing to your GitHub repository.
+
+
+GiHub Pages可以让你发布Web内容到GiHub.com上，并且能够以你的GitHub网站上注册的用户用户名作为子域名的一部分来访问。有了GitHub Pages提供的服务器和域名资源，接下来还要用到Jekyll：
+
+> We thought it would be nice to give you an easy way to assemble more complex sites. That’s why we pipe every Pages-bound repo/branch through [Jekyll](https://github.com/jekyll/jekyll), my very own blog-aware static site generator that was purpose built specifically for this task. With Jekyll, you have access to layouts, includes, filters, syntax highlighting, Textile and Markdown, and intelligent handling of blog entries. All you have to do is follow the Jekyll conventions and we’ll handle the transformation. For an example of a Jekyll site that works on Pages, check out my tpw blog repo.
+[GitHub Pages](https://github.com/blog/272-github-pages)
+
+GitHub Pages项目Jekyll是GitHub支持的一个开源项目，提供了一个轻松的方式搭建一个复杂的网站。
+
+搭建步骤
+
+1. 在[GitHub](https://github.com/)网站注册一个账号，账号的用户名会作为之后网站域名的一部分。
+2. 进入[Jekyll-GitHub](https://github.com/jekyll/jekyll)，点击｀fork｀
+3. 进入个人页面，找到
+	
 
 ## 后记
 
-回顾这个博客的诞生，纯粹是出于个人兴趣。在知乎相关问题上回答并获得一定的 star 后，我决定把这个博客主题当作一个小小的开源项目来维护。
-
-在经历 v1.0 - v1.5 的蜕变后，这个博客主题愈发完整，不但增加了诸多 UI 层的优化（opinionated）；在代码层面，更加丰富的配置项也使得这个主题拥有了更好的灵活性与可拓展性。而作为一个开源项目，我也积极的为其完善文档与解决 issue。
+回顾这个博客的诞生，纯粹是出于个人兴趣。
 
 如果你恰好逛到了这里，希望你也能喜欢这个博客主题。
 
-—— Hux 后记于 2015.10
-
-
+—— Lcr 后记于 2015.10
